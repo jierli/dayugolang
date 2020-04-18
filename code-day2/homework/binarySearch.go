@@ -8,7 +8,7 @@ func binarySearch(sliceIn []int, v int) (index int, times int) {
 	times = 0
 	for begin <= end {
 		times++
-		//其实值求和右移位算出中间值
+		//起始值求和右移位算出中间值
 		bnum := (begin + end) >> 1
 		fmt.Printf("第%d次,index:%d\n", times, bnum)
 		if sliceIn[bnum] < v {

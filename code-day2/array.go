@@ -51,3 +51,11 @@ func main() {
 	fmt.Printf("%v\n", d2[0])
 
 }
+
+	//数组切片操作
+	//切片操作 =>数组，切片
+	//方法1 nums[start:end]左包含右不包含  start end 可以不写，哪个不写就代表包含那一边所有，end 必须小于等于cap
+	//方法2 nums[start:end:max] max可以不指定,不指定的话就到nums容量结尾
+	nums := [7]int{1, 2, 3, 4, 5, 6, 7}
+	numChildren := nums[1:3]
+	fmt.Printf("切片操作%v ,%v\n", nums, numChildren)
