@@ -5,6 +5,7 @@ import "fmt"
 func calc(n1 int, n2 int, callback func(int, int) int) int {
 	//不定义什么运算
 	//通过函数参数传递给我要进行的运算
+	//函数类型 函数名  参数列表返回值
 	rt := callback(n1, n2)
 	//检查结果在0到100之间
 	if rt >= 0 && rt <= 100 {

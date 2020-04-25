@@ -37,5 +37,5 @@ func test3(n1, n2 int, args ...int) {
 //可变参数传入给另一个函数的可变参数
 func calc(n1, n2 int, args ...int) {
 	//调用test3 传入args 可变参数
-	test3(n1, n2, args...) //解切片操作
+	test3(n1, n2, args...) //解切片操作,展开可变参数，传递给另外一个函数
 }
