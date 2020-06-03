@@ -30,8 +30,9 @@ func main() {
 	sq1 := new(Square)
 	sq1.side = 5
 	areaIntf = sq1
+	//fmt.Printf("areaintf的类型:%T,%v\n", areaIntf, areaIntf.side)
 	if t, ok := areaIntf.(*Square); ok {
-		fmt.Printf("areaintf的类型:%T,%v\n", t, t)
+		fmt.Printf("areaintf的类型:%T,%v\n", t, t.side)
 	}
 	if u, ok := areaIntf.(*Circle); ok {
 		fmt.Printf("Circle的类型:%T,%v\n", u, u)

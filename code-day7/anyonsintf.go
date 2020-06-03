@@ -19,6 +19,7 @@ func main() {
 	var sender interface {
 		Send(to, msg string) error
 	}
+	fmt.Printf("%T,%#v\n", sender, sender)
 	fmt.Println(sender)
 	sender = EmailSender{}
 	fmt.Println(sender)
