@@ -14,16 +14,22 @@ func main() {
 	fmt.Println("kind:", v.Kind())
 	fmt.Println(v.Interface())
 
-	type Any interface{}
-	type Car struct {
-		Model        string
-		Manufacturer string
-		BuildYear    int
-		// ...
-	}
 
-	type Cars []*Car
 
-	fmt.Printf("%#v", Cars)
 
+}
+
+type Any interface{}
+type Car struct {
+	Model        string
+	Manufacturer string
+	BuildYear    int
+	// ...
+}
+
+type Cars []*Car
+func (cs Cars) Process(f func(car *Car)) {
+    for _, c := range cs {
+        f(c)
+    }
 }
