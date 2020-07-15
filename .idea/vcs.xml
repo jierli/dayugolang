@@ -2,9 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-<<<<<<< HEAD
-    <mapping directory="$PROJECT_DIR$/dba_tools" vcs="Git" />
-=======
->>>>>>> 0fa85c7ab08a0110f16dd49754370f4bd0e5e601
   </component>
 </project>
