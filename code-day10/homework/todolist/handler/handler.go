@@ -1,15 +1,50 @@
 package handler
 
 import (
+	"fmt"
+	"time"
 	"html/template"
 	"net/http"
 )
 
-type QueryHandler struct {
+type Task struct {
+	ID int
+	Name string
+	Status int
+	Content string
+	StartTime time.Time
+	Deadline time.Time
+	CompleteTime *time.Time
+	User string
 }
+/*
+type TaskForm struct {
+	ID int
+	Name string
+	Status int
+	Content string
+	StartTime time.Time
+	Deadline time.Time
+	CompleteTime *time.Time
+	User string
+}
+*/
+func (h *Task) Index(response http.ResponseWriter, request *http.Request)  {
+	tasks:=make([]Task,0,20)
+	task:=Task{
+		ID:1,
+		Name :"tudolist",
+		Status:1,
+		Content:"test",
+		User :"dayu",
+	}
+	tasks=append(tasks,task)
+	fmt.Println(tasks)
 
-func (h *QueryHandler) ServeHTTP(response http.ResponseWriter, request *http.Request)  {
-	request.ParseForm()
+
 	tpl := template.Must(template.ParseFiles("views/index.html"))
-	tpl.ExecuteTemplate(response, "index.html", []int{1, 2, 3})
+	tpl.ExecuteTemplate(response, "index.html", struct {
+		Tasks []Task
+	}{tasks})
+	fmt.Println(tasks)
 }

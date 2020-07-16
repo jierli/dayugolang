@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todulist</title>
+</head>
+<body>
+<hr>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>任务名</th>
+        <th>状态</th>
+        <th>任务内容</th>
+        <th>开始时间</th>
+        <th>结束时间</th>
+        <th>完成时间</th>
+        <th>负责人</th>
+    </tr>
+    </thead>
+    {{ .Tasks }}
+    <tbody>
+    {{ range .Tasks }}
+    <tr>
+        <td>{{ .ID }}</td>
+        <td>{{ .Name }}</td>
+        <td>{{ .Status }}</td>
+        <td>{{ .Content }}</td>
+        <td>{{ .StartTime }}</td>
+        <td>{{ .Deadline }}</td>
+        <td>{{ .CompleteTime }}</td>
+        <td>{{ .User }}</td>
+    </tr>
+    {{ end }}
+    </tbody>
+</table>
+</body>
+</html>
